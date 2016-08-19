@@ -1,0 +1,68 @@
+---
+title       : Developing Data Products - Course Project
+subtitle    : Best Car for Your Trip
+author      : Himanshu Singh
+job         : Senior Analyst
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+<!-- ## Read-And-Delete -->
+
+<!-- 1. Edit YAML front matter -->
+<!-- 2. Write using R Markdown -->
+<!-- 3. Use an empty line followed by three dashes to separate slides! -->
+
+<!----- .class #id -->
+
+## Introduction
+========================================================
+This presentation is part of the Course Project for the Coursera Developing Data Products class. The peer assessed assignment has two parts. First, we need to create a Shiny application and deploy it on Rstudio's servers. Second, we should use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application. This presentation adresses the second part of the course project.
+
+The app developed for the first part of the assignment is available at:
+https://himanshus.shinyapps.io/DevDataProdProject/
+
+Source code for ui.R and server.R files are available on the GitHub:
+https://github.com/s-himanshu/DevDataProdProject
+
+
+## <h3 align="center">Enjoy the App! </h2>
+
+---
+## Selecting the best Car For Your Road Trip
+========================================================
+I do not own a car, and if you love road trips, this app is for You!
+This app allows to choose the best car for your road trip, based on some simple parameters. It should help you economise fuel consumption to save both money and fuel. This is especially important when your journey spans a few hundred miles or more.
+The basic parameters are:
+- Distance to Travel
+- Fuel Price
+- Fuel Budget
+
+Advanced parameters available are:
+- Cylinders
+- Displacement Volume
+- Horse Power
+- Transmission Type
+
+---
+## Source Data
+==============
+MTCARS DATASET
+
+The data used in the app comes from the Motor Trend Car Road Tests (mtcars) dataset. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). We will look at some features of the data:
+```{r Data}
+head(mtcars)
+```
+
+---
+## Plot 
+========================================================
+The following plot shows the relationship between three variables: miles per gallon (mpg), displacement volume, and weight of the car. It appears that generally, the higher is the displacement or weight, lower in the mpg.
+
+```{r Plot, echo=FALSE, warning=FALSE}
+library(car); scatterplotMatrix(~mpg+disp+wt , data = mtcars)
+```

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products - Course Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products - Course Project">
+  <meta name="author" content="Himanshu Singh">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products - Course Project</h1>
+    <h2>Best Car for Your Trip</h2>
+    <p>Himanshu Singh<br/>Senior Analyst</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <!-- ## Read-And-Delete -->
+
+<!-- 1. Edit YAML front matter -->
+
+<!-- 2. Write using R Markdown -->
+
+<!-- 3. Use an empty line followed by three dashes to separate slides! -->
+
+<!----- .class #id -->
+
+<h2>Introduction</h2>
+
+<h1></h1>
+
+<p>This presentation is part of the Course Project for the Coursera Developing Data Products class. The peer assessed assignment has two parts. First, we need to create a Shiny application and deploy it on Rstudio&#39;s servers. Second, we should use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application. This presentation adresses the second part of the course project.</p>
+
+<p>The app developed for the first part of the assignment is available at:
+<a href="https://himanshus.shinyapps.io/DevDataProdProject/">https://himanshus.shinyapps.io/DevDataProdProject/</a></p>
+
+<p>Source code for ui.R and server.R files are available on the GitHub:
+<a href="https://github.com/s-himanshu/DevDataProdProject">https://github.com/s-himanshu/DevDataProdProject</a></p>
+
+<h2><h3 align="center">Enjoy the App! </h2></h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Selecting the best Car For Your Road Trip</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1></h1>
+
+<p>I do not own a car, and if you love road trips, this app is for You!
+This app allows to choose the best car for your road trip, based on some simple parameters. It should help you economise fuel consumption to save both money and fuel. This is especially important when your journey spans a few hundred miles or more.
+The basic parameters are:</p>
+
+<ul>
+<li>Distance to Travel</li>
+<li>Fuel Price</li>
+<li>Fuel Budget</li>
+</ul>
+
+<p>Advanced parameters available are:</p>
+
+<ul>
+<li>Cylinders</li>
+<li>Displacement Volume</li>
+<li>Horse Power</li>
+<li>Transmission Type</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Source Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1></h1>
+
+<p>MTCARS DATASET</p>
+
+<p>The data used in the app comes from the Motor Trend Car Road Tests (mtcars) dataset. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). We will look at some features of the data:</p>
+
+<pre><code class="r">head(mtcars)
+</code></pre>
+
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1></h1>
+
+<p>The following plot shows the relationship between three variables: miles per gallon (mpg), displacement volume, and weight of the car. It appears that generally, the higher is the displacement or weight, lower in the mpg.</p>
+
+<p><img src="figure/Plot-1.png" alt="plot of chunk Plot"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Selecting the best Car For Your Road Trip'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Source Data'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Plot'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
